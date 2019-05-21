@@ -249,11 +249,26 @@ end)
 ESX.RegisterUsableItem('carokit', function(source)
 	local _source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
+	local mechOn = 0
+	-- check mechs
+	local players = ESX.GetPlayers()
+	for i=1, #players, 1 do
+			local xPlayerjob = ESX.GetPlayerFromId(players[i])
 
-	xPlayer.removeInventoryItem('carokit', 1)
+			if ( xPlayerjob.job.name == "mechanic" ) then
+					mechOn = mechOn + 1
+			end
+	end
+	if mechOn == 0 then
+			xPlayer.removeInventoryItem('carokit', 1)
 
-	TriggerClientEvent('esx_mechanicjob:onCarokit', _source)
-	TriggerClientEvent('esx:showNotification', _source, _U('you_used_body_kit'))
+			TriggerClientEvent('esx_mechanicjob:onCarokit', _source)
+			TriggerClientEvent('esx:showNotification', _source, _U('you_used_repair_kit'))
+
+	else
+			TriggerClientEvent('esx:showNotification', _source, _U('mech_is_on'))
+	end
+
 end)
 
 RegisterServerEvent('esx_mechanicjob:getStockItem')
