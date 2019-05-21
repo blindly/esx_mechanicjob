@@ -21,7 +21,7 @@ Config.Vehicles = {
 Config.Zones = {
 	MechanicActions = {
 		Pos = {x = -203.47, y = -1328.16, z = 33.85},
-		Pos = {x = 1188.02, y = 2636.09, z = 33.85},
+	--	Pos = {x = 1188.02, y = 2636.09, z = 33.85},
 		Size = {x = 1.5, y = 1.5, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
 		Type = 1
