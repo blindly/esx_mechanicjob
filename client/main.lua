@@ -716,13 +716,13 @@ AddEventHandler('esx_mechanicjob:onCarokit', function()
 		end
 
 		if DoesEntityExist(vehicle) then
-			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_HAMMERING', 0, true)
+			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 			Citizen.CreateThread(function()
 				Citizen.Wait(10000)
 				SetVehicleFixed(vehicle)
 				SetVehicleDeformationFixed(vehicle)
 				ClearPedTasksImmediately(playerPed)
-				ESX.ShowNotification(_U('body_repaired'))
+				ESX.ShowNotification(_U('veh_repaired'))
 			end)
 		end
 	end
