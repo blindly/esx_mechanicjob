@@ -18,45 +18,91 @@ Config.Vehicles = {
 	"buffalo"
 }
 
-Config.Zones = {
-	MechanicActions = {
-		Pos = {x = -203.47, y = -1328.16, z = 33.85},
-	--	Pos = {x = 1188.02, y = 2636.09, z = 33.85},
-		Size = {x = 1.5, y = 1.5, z = 1.0},
-		Color = {r = 204, g = 204, b = 0},
-		Type = 1
-	},
-	Garage = {
-		Pos = {x = -97.5, y = 6496.1, z = 30.4},
-		Size = {x = 1.5, y = 1.5, z = 1.0},
-		Color = {r = 204, g = 204, b = 0},
-		Type = 1
-	},
-	Craft = {
-		Pos = {x = -196.37, y = -1319.51, z = 30.3},
-		Size = {x = 1.5, y = 1.5, z = 1.0},
-		Color = {r = 204, g = 204, b = 0},
-		Type = 1
-	},
-	VehicleSpawnPoint = {
-		Pos = {x = -204.26, y = -1298.85, z = 31.3},
-		Size = {x = 1.5, y = 1.5, z = 1.0},
-		Type = -1
-	},
-	VehicleDeleter = {
-		Pos = {x = -182.3, y = -1323.72, z = 30.36},
-		Size = {x = 3.0, y = 3.0, z = 1.0},
-		Color = {r = 244, g = 66, b = 66},
-		Type = 1
-	},
-	VehicleDelivery = {
-		Pos = {x = -160.66, y = -1307.86, z = 30.25},
-		Size = {x = 20.0, y = 20.0, z = 3.0},
-		Color = {r = 244, g = 66, b = 66},
-		Type = -1
-	}
+-- Mechanic Actions
+Config.MechanicActions = {
+    {["x"] = -203.47, ["y"] = -1328.16, ["z"] = 33.85},
+    {["x"] = 1188.02, ["y"] = 2636.09, ["z"] = 33.85}
 }
 
+for i = 1, #Config.MechanicActions, 1 do
+	Config.Zones["MechanicActions" .. i] = {
+		Pos = Config.MechanicActions[i],
+		Size = {x = 1.5, y = 1.5, z = 1.0},
+		Color = {r = 204, g = 204, b = 0},
+		Type = 1
+	}
+end
+
+-- Garage Actions
+Config.Garage = {
+    {["x"] = -97.5, ["y"] = 6496.1, ["z"] = 30.4}
+}
+
+for i = 1, #Config.Garage, 1 do
+	Config.Zones["Garage" .. i] = {
+		Pos = Config.Garage[i],
+        Size = {x = 1.5, y = 1.5, z = 1.0},
+        Color = {r = 204, g = 204, b = 0},
+        Type = 1
+	}
+end
+
+-- Craft Actions
+Config.Craft = {
+    {["x"] = -196.37, ["y"] = -1319.51, ["z"] = 30.3}
+}
+
+for i = 1, #Config.Craft, 1 do
+	Config.Zones["Craft" .. i] = {
+		Pos = Config.Craft[i],
+        Size = {x = 1.5, y = 1.5, z = 1.0},
+        Color = {r = 204, g = 204, b = 0},
+        Type = 1
+	}
+end
+
+-- VehicleSpawnPoint Actions
+Config.VehicleSpawnPoint = {
+    {["x"] = -204.26, ["y"] = -1298.85, ["z"] = 31.3}
+}
+
+for i = 1, #Config.VehicleSpawnPoint, 1 do
+	Config.Zones["VehicleSpawnPoint" .. i] = {
+		Pos = Config.VehicleSpawnPoint[i],
+        Size = {x = 1.5, y = 1.5, z = 1.0},
+        Type = -1
+	}
+end
+
+-- VehicleDeleter Actions
+Config.VehicleDeleter = {
+    {["x"] = -182.3, ["y"] = -1323.72, ["z"] = 30.36}
+}
+
+for i = 1, #Config.VehicleDeleter, 1 do
+	Config.Zones["VehicleDeleter" .. i] = {
+		Pos = Config.VehicleDeleter[i],
+        Size = {x = 3.0, y = 3.0, z = 1.0},
+        Color = {r = 244, g = 66, b = 66},
+        Type = 1
+	}
+end
+
+-- VehicleDelivery Actions
+Config.VehicleDelivery = {
+    {["x"] = -160.66, ["y"] = -1307.86, ["z"] = 30.25}
+}
+
+for i = 1, #Config.VehicleDelivery, 1 do
+	Config.Zones["VehicleDelivery" .. i] = {
+		Pos = Config.VehicleDelivery[i],
+        Size = {x = 20.0, y = 20.0, z = 3.0},
+        Color = {r = 244, g = 66, b = 66},
+        Type = -1
+	}
+end
+
+-- Towables
 Config.Towables = {
 	{["x"] = -2480.8720703125, ["y"] = -211.96409606934, ["z"] = 17.397672653198},
 	{["x"] = -2723.392578125, ["y"] = 13.207388877869, ["z"] = 15.12806892395},
