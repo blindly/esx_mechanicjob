@@ -18,6 +18,8 @@ Config.Vehicles = {
 	"buffalo"
 }
 
+Config.Zones = {}
+
 -- Mechanic Actions
 Config.MechanicActions = {
     {["x"] = -203.47, ["y"] = -1328.16, ["z"] = 33.85},
